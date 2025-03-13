@@ -157,6 +157,23 @@
             color: #4ecdc4;
             margin-bottom: 15px;
         }
+ .privacy-link {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .privacy-link a {
+        color: #4ecdc4;
+        text-decoration: none;
+        font-size: 0.9em;
+        transition: opacity 0.3s ease;
+    }
+
+    .privacy-link a:hover {
+        opacity: 0.8;
+        text-decoration: underline;
+    }
+
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
@@ -238,7 +255,7 @@
 <!-- GDPR Elements -->
     <div id="cookie-consent">
         <p>We use cookies to provide our services and for analytics and ads. By using our site, you agree to our 
-            <a href="#" onclick="showPrivacyPolicy()">Privacy Policy</a>.
+            <a href="numerology-tool/privacy-policy" onclick="showPrivacyPolicy()">Privacy Policy</a>.
         </p>
         <div class="cookie-buttons">
             <button class="cookie-btn" onclick="acceptCookies()">Accept</button>
