@@ -100,6 +100,7 @@
         }
 
         .ad-container {
+            min-height: 100px;
             margin: 30px 0;
             border-radius: 12px;
             overflow: hidden;
@@ -157,23 +158,28 @@
             color: #4ecdc4;
             margin-bottom: 15px;
         }
- .privacy-link {
-        text-align: center;
-        margin: 20px 0;
-    }
 
-    .privacy-link a {
-        color: #4ecdc4;
-        text-decoration: none;
-        font-size: 0.9em;
-        transition: opacity 0.3s ease;
-    }
+        #cookie-consent {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #1a1a2e;
+            padding: 15px;
+            text-align: center;
+            display: none;
+            z-index: 1000;
+            border-top: 1px solid #4ecdc4;
+        }
 
-    .privacy-link a:hover {
-        opacity: 0.8;
-        text-decoration: underline;
-    }
+        .cookie-buttons {
+            margin-top: 10px;
+        }
 
+        .cookie-btn {
+            margin: 0 10px;
+            padding: 8px 20px;
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
@@ -252,21 +258,16 @@
                 data-full-width-responsive="true"></ins>
         </div>
     </div>
-<!-- GDPR Elements -->
+
+    <!-- GDPR Consent Banner -->
     <div id="cookie-consent">
         <p>We use cookies to provide our services and for analytics and ads. By using our site, you agree to our 
-            <a href="../numerology-tool/privacy-policy.html" onclick="showPrivacyPolicy()">Privacy Policy</a>.
+            <a href="privacy-policy.html" onclick="showPrivacyPolicy()">Privacy Policy</a>.
         </p>
         <div class="cookie-buttons">
             <button class="cookie-btn" onclick="acceptCookies()">Accept</button>
             <button class="cookie-btn" onclick="declineCookies()">Decline</button>
         </div>
-    </div>
-
-    <div id="privacy-modal">
-        <h2>Privacy Policy</h2>
-        <!-- ... (Full privacy policy content) ... -->
-        <button onclick="closePrivacyModal()">Close</button>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -292,34 +293,23 @@
         }
 
         function loadAds() {
-            (adsbygoogle = window.adsbygoogle || []).push({});
+            if (localStorage.getItem('cookieConsent') === 'accepted') {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            }
         }
 
-        // Privacy Policy Modal
-        function showPrivacyPolicy() {
-            document.getElementById('privacy-modal').style.display = 'block';
-        }
-
-        function closePrivacyModal() {
-            document.getElementById('privacy-modal').style.display = 'none';
-        }
-
-        // Initialize
+        // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
             showCookieConsent();
-            if(localStorage.getItem('cookieConsent') === 'accepted') {
-                loadAds();
-            }
-        });
-    
-    </script>
-    <script>
-        // Initialize Ads
-        document.addEventListener('DOMContentLoaded', () => {
-            (adsbygoogle = window.adsbygoogle || []).push({});
+            loadAds();
         });
 
-        // Language Translations
+        // Ad error handling
+        (window.adsbygoogle = window.adsbygoogle || []).onerror = function() {
+            console.error('AdMob failed to load');
+        };
+
+        // Numerology Calculator Logic
         const translations = {
             en: {
                 title: "Numerology Calculator",
@@ -350,7 +340,7 @@
                     9: ["Engage in charity work", "Wear red sandalwood"]
                 }
             },
-            hi: {
+             hi: {
                 title: "अंक ज्योतिष कैलकुलेटर",
                 reportTitle: "आपकी अंक ज्योतिष रिपोर्ट",
                 predictionTitle: "ज्योतिषीय भविष्यवाणी",
@@ -417,9 +407,9 @@
                 const key = el.getAttribute('data-i18n');
                 el.textContent = translations[lang][key];
             });
-        }
 
-        // Numerology Calculations
+	}
+ 	// Numerology Calculations
         function calculateNumerology() {
             const lang = document.getElementById('languageSelect').value;
             const name = document.getElementById('userName').value.trim();
@@ -431,7 +421,7 @@
                 return;
             }
 
-            // Life Path Number Calculation
+           // Life Path Number Calculation
             const lifePath = reduceNumber(dob);
             
             // Expression Number Calculation
@@ -497,6 +487,7 @@
         // Initialize
         document.getElementById('languageSelect').addEventListener('change', updateLanguage);
         updateLanguage();
+
     </script>
 </body>
 </html>
