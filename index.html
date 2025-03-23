@@ -12,7 +12,30 @@
     
     <!-- AdMob Integration -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1743402057082107" crossorigin="anonymous"></script>
-    
+    <!--Adsterra Integration -->
+	<style type="text/css">
+  .mobileShow {display: none;}
+
+  /* Smartphone Portrait and Landscape */
+  @media only screen
+    and (min-device-width : 320px)
+    and (max-device-width : 480px){ 
+      .mobileShow {display: inline;}
+  }
+  .mobileHide { display: inline; }
+
+  /* Smartphone Portrait and Landscape */
+  @media only screen
+    and (min-device-width : 320px)
+    and (max-device-width : 480px){
+     .mobileHide { display: none;}
+  }
+</style>
+
+<div class="mobileShow"> Your code snippet for mobile </div>
+
+<div class="mobileHide"> Code snippet for desktop only </div>
+
     <style>
         :root {
             --primary: #2c3e50;
