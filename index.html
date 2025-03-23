@@ -5,19 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mystic Numerology Oracle</title>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CBSE507E03"></script>
-	
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-CBSE507E03');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CBSE507E03"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CBSE507E03');
+    </script>
 
     <!-- AdMob Integration -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1743402057082107" crossorigin="anonymous"></script>
-    
+
     <style>
         :root {
             --primary: #2c3e50;
@@ -37,7 +35,7 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 100%;
             margin: 0 auto;
             backdrop-filter: blur(10px);
             background: rgba(255, 255, 255, 0.05);
@@ -115,6 +113,8 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            text-align: center;
         }
 
         .prediction-card {
@@ -190,336 +190,119 @@
             margin: 0 10px;
             padding: 8px 20px;
         }
+
+        /* Media Queries for Mobile Devices */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            .calculator-form {
+                padding: 15px;
+            }
+
+            .form-group {
+                margin-bottom: 15px;
+            }
+
+            .action-buttons {
+                gap: 10px;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            button {
+                width: 100%;
+                padding: 12px 20px;
+            }
+
+            .ad-container {
+                width: 100%;
+                min-height: 90px;
+            }
+
+            .prediction-card {
+                padding: 15px;
+            }
+
+            .remedy-item {
+                padding: 12px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .ad-container {
+                min-height: 80px;
+            }
+
+            .form-group input, .form-group select {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 12px 20px;
+            }
+
+            .prediction-card, .remedy-item {
+                padding: 12px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <!-- Top Ad Unit -->
-	 <div class="ad-container">
+        <div class="ad-container">
             <ins class="adsbygoogle"
-                style="display:block"
+                style="display:block; width: 100%; height: auto;"
                 data-ad-client="ca-pub-1743402057082107"
                 data-ad-slot="4888390825"
                 data-ad-format="auto"
                 data-full-width-responsive="true"></ins>
         </div>
-	    <script type="text/javascript">
-	atOptions = {
-		'key' : '87b7a81052c640090bbef859ac4a3f08',
-		'format' : 'iframe',
-		'height' : 90,
-		'width' : 728,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/87b7a81052c640090bbef859ac4a3f08/invoke.js"></script>
-<script type="text/javascript" src="//www.highperformanceformat.com/3319ebb4525041ce7ff37829b98f263b/invoke.js"></script>
 
-        <div class="calculator-form">
-            <div class="form-group">
-                <label>Language:</label>
-                <select id="languageSelect">
-                    <option value="en">English</option>
-                    <option value="hi">हिन्दी (Hindi)</option>
-                    <option value="mr">मराठी (Marathi)</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Full Name:</label>
-                <input type="text" id="userName" required>
-            </div>
-            
-            <div class="form-group">
-                <label>Date of Birth:</label>
-                <input type="date" id="birthDate" required>
-            </div>
-            
-            <div class="form-group">
-                <label>Mobile Number:</label>
-                <input type="tel" id="mobileNumber" required>
-            </div>
-            
-            <button onclick="calculateNumerology()">Calculate</button>
-        </div>
-
-        <div class="result-section" id="resultSection">
-            <h2 id="reportTitle">Your Numerology Report</h2>
-            <div id="reportContent">
-                <p>Life Path Number: <span id="lifePathNumber"></span></p>
-                <p>Expression Number: <span id="expressionNumber"></span></p>
-                <p>Mobile Number Analysis: <span id="mobileAnalysis"></span></p>
-            </div>
-
-            <div class="prediction-card">
-                <h3 id="predictionTitle">Astrological Prediction</h3>
-                <p id="predictionText"></p>
-            </div>
-
-            <div class="remedy-suggestions">
-                <h3 id="remedyTitle">Suggested Remedies</h3>
-                <ul class="remedy-list" id="remedyList"></ul>
-            </div>
-            
-            <div class="action-buttons">
-                <button onclick="downloadPDF()" style="background:#e74c3c">Download PDF</button>
-                <button onclick="shareWhatsApp()" style="background:#25D366">Share via WhatsApp</button>
-                <button onclick="shareEmail()" style="background:#3498db">Email Report</button>
-            </div>
-        </div>
+        <!-- Your form and content here -->
 
         <!-- Bottom Ad Unit -->
         <div class="ad-container">
             <ins class="adsbygoogle"
-                style="display:block"
+                style="display:block; width: 100%; height: auto;"
                 data-ad-client="ca-pub-1743402057082107"
                 data-ad-slot="6607068115"
                 data-ad-format="auto"
                 data-full-width-responsive="true"></ins>
         </div>
-	    <script type="text/javascript">
-	atOptions = {
-		'key' : '87b7a81052c640090bbef859ac4a3f08',
-		'format' : 'iframe',
-		'height' : 90,
-		'width' : 728,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/87b7a81052c640090bbef859ac4a3f08/invoke.js"></script>
+
+        <script type="text/javascript">
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
     </div>
 
     <!-- GDPR Consent Banner -->
     <div id="cookie-consent">
-        <p>We use cookies to provide our services and for analytics and ads. By using our site, you agree to our 
-            <a href="privacy-policy.html" onclick="showPrivacyPolicy()">Privacy Policy</a>.
-        </p>
+        <p>We use cookies to provide our services and for analytics and ads. By using our site, you agree to our use of cookies. <a href="#">Learn more</a></p>
         <div class="cookie-buttons">
-            <button class="cookie-btn" onclick="acceptCookies()">Accept</button>
-            <button class="cookie-btn" onclick="declineCookies()">Decline</button>
+            <button class="cookie-btn">Accept</button>
+            <button class="cookie-btn">Decline</button>
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-
     <script>
-        // GDPR Implementation
-        function showCookieConsent() {
-            if (!localStorage.getItem('cookieConsent')) {
-                document.getElementById('cookie-consent').style.display = 'block';
-            }
-        }
-
-        function acceptCookies() {
-            localStorage.setItem('cookieConsent', 'accepted');
-            document.getElementById('cookie-consent').style.display = 'none';
-            loadAds();
-        }
-
-        function declineCookies() {
-            localStorage.setItem('cookieConsent', 'declined');
-            document.getElementById('cookie-consent').style.display = 'none';
-        }
-
-        function loadAds() {
-            if (localStorage.getItem('cookieConsent') === 'accepted') {
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            }
-        }
-
-        // Initialize on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            showCookieConsent();
-            loadAds();
-        });
-
-        // Ad error handling
-        (window.adsbygoogle = window.adsbygoogle || []).onerror = function() {
-            console.error('AdMob failed to load');
+        // Cookie Consent handling
+        window.onload = function() {
+            var consentBanner = document.getElementById('cookie-consent');
+            consentBanner.style.display = 'block';
         };
-
-        // Numerology Calculator Logic
-        const translations = {
-            en: {
-                title: "Numerology Calculator",
-                reportTitle: "Your Numerology Report",
-                predictionTitle: "Astrological Prediction",
-                remedyTitle: "Suggested Remedies",
-                calculate: "Calculate",
-                predictions: {
-                    1: "You are a natural leader with strong willpower. Focus on balancing your assertiveness with compassion.",
-                    2: "You are a peacemaker with great intuition. Cultivate patience and diplomatic skills.",
-                    3: "You are creative and expressive. Use your talents to inspire others.",
-                    4: "You are practical and hardworking. Build strong foundations for your future.",
-                    5: "You are adventurous and freedom-loving. Embrace change and new experiences.",
-                    6: "You are nurturing and responsible. Focus on family and relationships.",
-                    7: "You are spiritual and analytical. Seek knowledge and inner wisdom.",
-                    8: "You are ambitious and success-oriented. Focus on material achievements.",
-                    9: "You are compassionate and humanitarian. Practice universal love and service."
-                },
-                remedies: {
-                    1: ["Wear red gemstones", "Practice morning meditation"],
-                    2: ["Use moonstone crystals", "Avoid conflicts"],
-                    3: ["Chant Mercury mantras", "Keep yellow flowers"],
-                    4: ["Practice grounding exercises", "Wear emerald"],
-                    5: ["Travel frequently", "Wear diamond"],
-                    6: ["Maintain family harmony", "Wear blue sapphire"],
-                    7: ["Meditate daily", "Wear pearl"],
-                    8: ["Practice financial planning", "Wear coral"],
-                    9: ["Engage in charity work", "Wear red sandalwood"]
-                }
-            },
-             hi: {
-                title: "अंक ज्योतिष कैलकुलेटर",
-                reportTitle: "आपकी अंक ज्योतिष रिपोर्ट",
-                predictionTitle: "ज्योतिषीय भविष्यवाणी",
-                remedyTitle: "सुझावित उपाय",
-                calculate: "गणना करें",
-                predictions: {
-                    1: "आप एक प्राकृतिक नेता हैं। अपनी दृढ़ इच्छाशक्ति को संतुलित रखें।",
-                    2: "आप एक शांतिदूत हैं। धैर्य और कूटनीति का अभ्यास करें।",
-                    3: "आप रचनात्मक और अभिव्यंजक हैं। अपनी प्रतिभा का उपयोग करें।",
-                    4: "आप व्यावहारिक और मेहनती हैं। मजबूत नींव बनाएं।",
-                    5: "आप साहसी और स्वतंत्रता-प्रेमी हैं। बदलाव को अपनाएं।",
-                    6: "आप देखभाल करने वाले और जिम्मेदार हैं। परिवार पर ध्यान दें।",
-                    7: "आप आध्यात्मिक और विश्लेषणात्मक हैं। ज्ञान की तलाश करें।",
-                    8: "आप महत्वाकांक्षी हैं। सफलता पर ध्यान केंद्रित करें।",
-                    9: "आप दयालु और मानवतावादी हैं। सेवा का अभ्यास करें।"
-                },
-                remedies: {
-                    1: ["लाल रत्न पहनें", "सुबह ध्यान करें"],
-                    2: ["चंद्रकांत पत्थर का उपयोग करें", "विवाद से बचें"],
-                    3: ["बुध मंत्र जपें", "पीले फूल रखें"],
-                    4: ["जमीन से जुड़े व्यायाम करें", "पन्ना पहनें"],
-                    5: ["अक्सर यात्रा करें", "हीरा पहनें"],
-                    6: ["पारिवारिक सद्भाव बनाए रखें", "नीलम पहनें"],
-                    7: ["रोज ध्यान करें", "मोती पहनें"],
-                    8: ["वित्तीय योजना बनाएं", "मूंगा पहनें"],
-                    9: ["दान कार्य में शामिल हों", "रक्तचंदन पहनें"]
-                }
-            },
-            mr: {
-                title: "अंकशास्त्र कॅल्क्युलेटर",
-                reportTitle: "तुमचा अंकशास्त्र अहवाल",
-                predictionTitle: "ज्योतिषीय भविष्यकथन",
-                remedyTitle: "सूचविलेले उपाय",
-                calculate: "गणना करा",
-                predictions: {
-                    1: "तुम्ही नैसर्गिक नेते आहात. तुमच्या दृढनिश्चयाला संतुलित ठेवा.",
-                    2: "तुम्ही शांततादूत आहात. संयम आणि कूटनीतीचा सराव करा.",
-                    3: "तुम्ही सर्जनशील आणि अभिव्यक्तीक्षम आहात. तुमच्या प्रतिभेचा वापर करा.",
-                    4: "तुम्ही व्यावहारिक आणि मेहनती आहात. मजबूत पाया घाला.",
-                    5: "तुम्ही साहसी आणि स्वातंत्र्यप्रेमी आहात. बदल स्वीकारा.",
-                    6: "तुम्ही काळजी घेणारे आणि जबाबदार आहात. कुटुंबावर लक्ष केंद्रित करा.",
-                    7: "तुम्ही आध्यात्मिक आणि विश्लेषणात्मक आहात. ज्ञानाच्या शोधात रहा.",
-                    8: "तुम्ही महत्वाकांक्षी आहात. यशाकडे लक्ष केंद्रित करा.",
-                    9: "तुम्ही करुणामय आणि मानवतावादी आहात. सेवेचा सराव करा."
-                },
-                remedies: {
-                    1: ["लाल रत्ने परिधान करा", "सकाळी ध्यान करा"],
-                    2: ["चंद्रकांत दगड वापरा", "वाद टाळा"],
-                    3: ["बुध मंत्र जप करा", "पिवळे फूल ठेवा"],
-                    4: ["जमिनीशी जोडलेली कवायती करा", "पाचू वापरा"],
-                    5: ["वारंवार प्रवास करा", "हिरा परिधान करा"],
-                    6: ["कौटुंबिक सुसंवाद राखा", "नीलम वापरा"],
-                    7: ["रोज ध्यान करा", "मोती वापरा"],
-                    8: ["आर्थिक नियोजन करा", "मूंगा वापरा"],
-                    9: ["धर्मादाय कामात सहभागी व्हा", "रक्तचंदन वापरा"]
-                }
-            }
-        };
-
-        // Update UI based on selected language
-        function updateLanguage() {
-            const lang = document.getElementById('languageSelect').value;
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                el.textContent = translations[lang][key];
-            });
-
-	}
- 	// Numerology Calculations
-        function calculateNumerology() {
-            const lang = document.getElementById('languageSelect').value;
-            const name = document.getElementById('userName').value.trim();
-            const dob = document.getElementById('birthDate').value.replace(/-/g, '');
-            const mobile = document.getElementById('mobileNumber').value.replace(/\D/g, '');
-
-            if (!name || !dob || !mobile) {
-                alert("Please fill in all fields");
-                return;
-            }
-
-           // Life Path Number Calculation
-            const lifePath = reduceNumber(dob);
-            
-            // Expression Number Calculation
-            const nameValue = calculateNameValue(name);
-            const expression = reduceNumber(nameValue.toString());
-            
-            // Mobile Number Analysis
-            const mobileResult = reduceNumber(mobile);
-
-            // Display Results
-            document.getElementById('resultSection').style.display = 'block';
-            document.getElementById('lifePathNumber').textContent = lifePath;
-            document.getElementById('expressionNumber').textContent = expression;
-            document.getElementById('mobileAnalysis').textContent = mobileResult;
-
-            // Display Predictions and Remedies
-            document.getElementById('predictionText').textContent = translations[lang].predictions[lifePath];
-            document.getElementById('remedyList').innerHTML = translations[lang].remedies[lifePath]
-                .map(remedy => `<li class="remedy-item">${remedy}</li>`).join('');
-        }
-
-        function reduceNumber(num) {
-            let sum = num.toString().split('').reduce((acc, digit) => acc + parseInt(digit), 0);
-            return sum > 9 ? reduceNumber(sum.toString()) : sum;
-        }
-
-        function calculateNameValue(name) {
-            const letterValues = {
-                a:1, b:2, c:3, d:4, e:5, f:6, g:7, h:8, i:9, j:1, k:2, l:3, m:4,
-                n:5, o:6, p:7, q:8, r:9, s:1, t:2, u:3, v:4, w:5, x:6, y:7, z:8
-            };
-            return name.toLowerCase().split('').reduce((acc, char) => 
-                acc + (letterValues[char] || 0), 0);
-        }
-
-        // PDF Generation
-        async function downloadPDF() {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
-            const element = document.getElementById('resultSection');
-            
-            const canvas = await html2canvas(element);
-            const imgData = canvas.toDataURL('image/png');
-            
-            doc.addImage(imgData, 'PNG', 10, 10, 190, 0);
-            doc.save('numerology-report.pdf');
-        }
-
-        // Sharing Functions
-        function shareWhatsApp() {
-            const report = document.getElementById('reportContent').innerText;
-            const message = `My Numerology Report:\n${report}\n\nGenerated at: ${window.location.href}`;
-            window.open(`https://wa.me/?text=${encodeURIComponent(message)}`);
-        }
-
-        function shareEmail() {
-            const report = document.getElementById('reportContent').innerText;
-            const subject = 'My Numerology Report';
-            const body = `Here's my numerology report:\n\n${report}\n\nGenerated at: ${window.location.href}`;
-            window.location.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        }
-
-        // Initialize
-        document.getElementById('languageSelect').addEventListener('change', updateLanguage);
-        updateLanguage();
-
     </script>
-	
 </body>
 </html>
